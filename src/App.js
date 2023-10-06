@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import ProductList from './ProductList';
+import ProductList from "./ProductList"
 
 function App() {
   const initialProducts = [
@@ -15,10 +15,10 @@ function App() {
     },
   ];
 
-  // Step 1: Use useState to manage the list of products
+ 
   const [products, setProducts] = useState(initialProducts);
 
-  // Step 2: Create a function to add a new product
+
   function newProduct() {
     const newProduct = {
       name: 'New Product',
@@ -26,7 +26,7 @@ function App() {
       productGroup: 'Group A',
     };
 
-    // Update the state by adding the new product to the existing products
+
     setProducts([...products, newProduct]);
   }
 
@@ -37,8 +37,8 @@ function App() {
 
       <button onClick={newProduct}>Add Product</button>
       
-      {/* Step 3: Pass the list of products and addProduct function as props */}
-      {/* <ProductList products={products} addProduct={newProduct} /> */}
+
+      <ProductList products={products} addProduct={newProduct} />
     </div>
   );
 }
