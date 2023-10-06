@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ProductList from './Components/ProductList';
-import "./App.css"
+
 
 function App() {
   const initialProducts = [
@@ -34,7 +34,7 @@ function App() {
   return (
     <div>
       <h1 className="text-3xl">Freshly</h1>
-      <p className="font-custom">Welcome back Danaaaaiel!</p>
+      <p className='font-bold underline'>Welcome ddddddaaiel!</p>
 
       <button onClick={newProduct}>Add Product</button>
       

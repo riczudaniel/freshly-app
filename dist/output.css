@@ -589,7 +589,14 @@ video {
   line-height: 2.25rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.font-bold {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+* {
+  border: 1px solid red;
 }
