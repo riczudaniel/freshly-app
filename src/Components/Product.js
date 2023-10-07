@@ -2,7 +2,7 @@ import React from 'react';
 
 function Product ({ name, daysUntil, productGroup }) {
   return (
-    <div>
+    <div className='grid grid-cols-3 gap-10 justify-center bg-amber-300 max-w-md rounded-md mb-2'>
       <p>{name}</p>
       <p>{daysUntil}</p>
       <p>{productGroup}</p>

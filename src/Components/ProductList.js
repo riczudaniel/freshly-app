@@ -4,8 +4,9 @@ import Product from './Product';
 
 const ProductList = ({ products }) => {
     return (
+      <div className="flex justify-center items-center">
       <div>
-        <h1>Product List</h1>
+      <h1 className='mx-auto text-center'>Product List</h1>
         {products.map((product, index) => (
           <Product
             key={index}
@@ -15,6 +16,7 @@ const ProductList = ({ products }) => {
           />
         ))}
       </div>
+    </div>
     );
   };
 

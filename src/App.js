@@ -35,11 +35,8 @@ function App() {
     <div>
       <h1 className="text-3xl">Freshly</h1>
       <p className='font-bold underline'>Welcome ddddddaaiel!</p>
-
       <button onClick={newProduct}>Add Product</button>
-      
-
-      <ProductList products={products} addProduct={newProduct} />
+      <ProductList products={products} addProduct={newProduct}/>
     </div>
   );
 }
