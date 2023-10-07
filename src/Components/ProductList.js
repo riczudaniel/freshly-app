@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Product from './Product';
+import NewProductInput from './NewProductInput';
+import AddButton from "./AddButton"
 
 
 
@@ -38,8 +40,9 @@ const ProductList = () => {
       <div>
       <h1 className='mx-auto text-center'>Product List</h1>
       <div className="text-center">
-          <button className='bg-blue-300 rounded-full px-3 py-1 mb-2' onClick={newProduct}>Add Product</button>
+          <AddButton newProduct={newProduct}></AddButton>
         </div>
+        <NewProductInput></NewProductInput>
         {products.map((product, index) => (
           <Product
             key={index}
