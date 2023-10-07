@@ -37,8 +37,8 @@ const ProductList = () => {
       <div className="flex justify-center items-center">
       <div>
       <h1 className='mx-auto text-center'>Product List</h1>
-      <div className="text-center"> {/* Center the button */}
-          <button onClick={newProduct}>Add Product</button>
+      <div className="text-center">
+          <button className='bg-blue-300 rounded-full px-3 py-1 mb-2' onClick={newProduct}>Add Product</button>
         </div>
         {products.map((product, index) => (
           <Product
