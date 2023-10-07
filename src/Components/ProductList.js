@@ -21,6 +21,7 @@ const ProductList = () => {
   
   
   const [products, setProducts] = useState(initialProducts);
+  const [showNewProductInput, setShowNewProductInput] = useState(false);
   
   
   function newProduct() {
@@ -37,12 +38,13 @@ const ProductList = () => {
   
     return (
       <div className="flex justify-center items-center">
-      <div>
+      <div className='max-w-md'>
       <h1 className='mx-auto text-center'>Product List</h1>
       <div className="text-center">
-          <AddButton newProduct={newProduct}></AddButton>
+          <AddButton newProduct={newProduct} onClick={() => setShowNewProductInput(true)} ></AddButton>
         </div>
-        <NewProductInput></NewProductInput>
+        
+        {showNewProductInput && <NewProductInput />}
         {products.map((product, index) => (
           <Product
             key={index}
