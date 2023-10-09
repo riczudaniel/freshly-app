@@ -24,14 +24,7 @@ const ProductList = () => {
   const [showNewProductInput, setShowNewProductInput] = useState(false);
   
   
-  function newProduct() {
-    const newProduct = {
-      name: 'Test Product',
-      daysUntil: '7 days',
-      productGroup: 'Group Test',
-    };
-  
-  
+  const addNewProduct = (newProduct) => {
     setProducts([...products, newProduct]);
   }
   
@@ -41,10 +34,10 @@ const ProductList = () => {
       <div className='max-w-md'>
       <h1 className='mx-auto text-center'>Product List</h1>
       <div className="text-center">
-          <AddButton newProduct={newProduct} onClick={() => setShowNewProductInput(true)} ></AddButton>
+          <AddButton onClick={() => setShowNewProductInput(true)}></AddButton>
         </div>
         
-        {showNewProductInput && <NewProductInput />}
+        {showNewProductInput && <NewProductInput onAddProduct={addNewProduct} />}
         {products.map((product, index) => (
           <Product
             key={index}
@@ -55,7 +48,7 @@ const ProductList = () => {
         ))}
       </div>
     </div>
-    );
-  };
+  );
+};
 
 export default ProductList
