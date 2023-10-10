@@ -5,6 +5,7 @@ function NewProductInput({ onAddProduct }) {
     const [name, setName] = useState('');
     const [daysUntil, setDaysUntil] = useState('');
     const [productGroup, setProductGroup] = useState('');
+    
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter' && name && daysUntil && productGroup) {
@@ -16,15 +17,11 @@ function NewProductInput({ onAddProduct }) {
         }
       };
 
+
     return(
-        // <div className='max-w-md flex'>
-        //     <input type='text' placeholder='Enter name..' className='w-1/3'></input>
-        //     <input type='text' placeholder='Enter days..' className='w-1/3'></input>
-        //     <input type='text' placeholder='Enter category..' className='w-1/3'></input>
-        // </div>
-         <div>
+         <div className='border-slate-400 border mb-2 rounded py-1 max-w-fit'>
          <input
-           className='w-1/3'
+           className='w-1/3 px-4'
            type="text"
            placeholder="Name"
            value={name}
@@ -32,17 +29,17 @@ function NewProductInput({ onAddProduct }) {
            onKeyPress={handleKeyPress}
          />
          <input
-           className='w-1/3'
-           type="text"
-           placeholder="Days Until"
+           className='w-1/3 px-3'
+           type="date"
+           placeholder="Date"
            value={daysUntil}
            onChange={(e) => setDaysUntil(e.target.value)}
            onKeyPress={handleKeyPress}
          />
          <input
-           className='w-1/3'
+           className='w-1/3 px-7'
            type="text"
-           placeholder="Product Group"
+           placeholder="Group"
            value={productGroup}
            onChange={(e) => setProductGroup(e.target.value)}
            onKeyPress={handleKeyPress}

@@ -32,7 +32,7 @@ const ProductList = () => {
     return (
       <div className="flex justify-center items-center">
       <div className='max-w-md'>
-      <h1 className='mx-auto text-center'>Product List</h1>
+      <h1 className='mx-auto text-center max-w-md'>Product List</h1>
       <div className="text-center">
           <AddButton onClick={() => setShowNewProductInput(true)}></AddButton>
         </div>
