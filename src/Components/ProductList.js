@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Product from './Product';
+import NewProductInput from './NewProductInput';
+import AddButton from "./AddButton"
 
 
 
@@ -19,27 +21,23 @@ const ProductList = () => {
   
   
   const [products, setProducts] = useState(initialProducts);
+  const [showNewProductInput, setShowNewProductInput] = useState(false);
   
   
-  function newProduct() {
-    const newProduct = {
-      name: 'Test Product',
-      daysUntil: '7 days',
-      productGroup: 'Group Test',
-    };
-  
-  
+  const addNewProduct = (newProduct) => {
     setProducts([...products, newProduct]);
   }
   
   
     return (
       <div className="flex justify-center items-center">
-      <div>
-      <h1 className='mx-auto text-center'>Product List</h1>
+      <div className='max-w-md'>
+      <h1 className='mx-auto text-center max-w-md'>Product List</h1>
       <div className="text-center">
-          <button className='bg-blue-300 rounded-full px-3 py-1 mb-2' onClick={newProduct}>Add Product</button>
+          <AddButton onClick={() => setShowNewProductInput(true)}></AddButton>
         </div>
+        
+        {showNewProductInput && <NewProductInput onAddProduct={addNewProduct} />}
         {products.map((product, index) => (
           <Product
             key={index}
@@ -50,7 +48,7 @@ const ProductList = () => {
         ))}
       </div>
     </div>
-    );
-  };
+  );
+};
 
 export default ProductList
