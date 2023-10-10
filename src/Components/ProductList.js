@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Product from './Product';
 import NewProductInput from './NewProductInput';
 import AddButton from "./AddButton"
+import Titles from "./Titles"
 
 
 
@@ -32,10 +33,11 @@ const ProductList = () => {
     return (
       <div className="flex justify-center items-center">
       <div className='max-w-md'>
-      <h1 className='mx-auto text-center max-w-md'>Product List</h1>
+      <h1 className='mx-auto text-center max-w-md mb-4 text-2xl'>Product List</h1>
       <div className="text-center">
           <AddButton onClick={() => setShowNewProductInput(true)}></AddButton>
         </div>
+      <Titles></Titles>
         
         {showNewProductInput && <NewProductInput onAddProduct={addNewProduct} />}
         {products.map((product, index) => (
