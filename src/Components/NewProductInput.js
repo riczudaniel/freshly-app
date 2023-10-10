@@ -5,6 +5,18 @@ function NewProductInput({ onAddProduct }) {
     const [name, setName] = useState('');
     const [daysUntil, setDaysUntil] = useState('');
     const [productGroup, setProductGroup] = useState('');
+    const [date, setDate] = useState(''); // State for the entered date
+   
+
+    const handleDateChange = (e) => {
+      const enteredDate = new Date(e.target.value);
+      const currentDate = new Date();
+      const timeDifference = enteredDate - currentDate;
+      const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+  
+      setDate(e.target.value); // Update the date in state
+      setDaysUntil(`${daysDifference} days`);
+    };
     
 
     const handleKeyPress = (e) => {
@@ -14,6 +26,7 @@ function NewProductInput({ onAddProduct }) {
           setName('');
           setDaysUntil('');
           setProductGroup('');
+          setDate(''); // Reset date input
         }
       };
 
@@ -32,8 +45,8 @@ function NewProductInput({ onAddProduct }) {
            className='w-1/3 px-3'
            type="date"
            placeholder="Date"
-           value={daysUntil}
-           onChange={(e) => setDaysUntil(e.target.value)}
+           value={date}
+           onChange={handleDateChange}
            onKeyPress={handleKeyPress}
          />
          <input
