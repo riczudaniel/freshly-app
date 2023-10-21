@@ -3,7 +3,7 @@ import freezer from "../images/freezer.png"
 import fridge from "../images/fridge.png"
 import pantry from "../images/pantry.png"
 
-function ListTypes () {
+function ListTypes ({ handleTypeSelect }) {
     const [selectedType, setSelectedType] = useState(null);
 
     const types = [
@@ -12,8 +12,9 @@ function ListTypes () {
         { name: 'Pantry', image: pantry },
       ];
       
-      const handleTypeClick = (index) => {
-        setSelectedType(index);
+      const handleTypeClick = (type) => {
+        setSelectedType(type);
+        handleTypeSelect(type)
       };
 
 
@@ -23,8 +24,8 @@ function ListTypes () {
             <img
               key={index}
               src={type.image}
-              className={`w-28 mx-2 p-2 rounded-md ${selectedType === index ? 'bg-gray-200' : ''}`}
-              onClick={() => handleTypeClick(index)}
+              className={`w-28 mx-2 p-2 rounded-md ${selectedType === type.name ? 'bg-gray-200' : ''}`}
+              onClick={() => handleTypeClick(type.name)}
               alt={type.name}
             />
           ))}
